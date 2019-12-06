@@ -6,7 +6,7 @@ class Xiaojiejie extends Component{
         super(props)
         this.state={
             inputVal:'',
-            list:['沁']
+            list:['c']
         }
     }
     render(){
@@ -15,10 +15,10 @@ class Xiaojiejie extends Component{
             <Fragment>
                 <div>
                     <label htmlFor="xiaomada">新增</label>
-                    <input id="xiaomada" className="search" value={this.state.inputVal} onChange={this.inputChange.bind(this)} />
+                    <input id="xiaomada" className="search" ref={(input)=>{this.input=input}} onChange={this.inputChange.bind(this)} />
                     <button  onClick={this.addList.bind(this)}>新增</button>
                     </div>
-                <ul>
+                <ul ref={(ul)=>{this.ul=ul}}>
                     {
                         this.state.list.map((item,index)=>{
                             return (
@@ -39,7 +39,7 @@ class Xiaojiejie extends Component{
     }
     inputChange(e){
         this.setState({
-            inputVal:e.target.value
+            inputVal:this.input.value
         })
     }
     // 新增列表
@@ -47,6 +47,10 @@ class Xiaojiejie extends Component{
         this.setState({
             list:[...this.state.list,this.state.inputVal],
             inputVal:''
+        },
+        ()=>{
+            
+            console.log(this.ul.querySelectorAll('div').length)
         })
     }
     // 删除列表
@@ -58,4 +62,5 @@ class Xiaojiejie extends Component{
         })
     }
 }
+
 export default Xiaojiejie
