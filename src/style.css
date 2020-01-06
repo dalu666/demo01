@@ -1,3 +1,45 @@
 .search{
     border: 1px solid #333;
 }
+/* 动画1. */
+/* .show{opacity: 1; transition: all 1s ease-out;}
+.hide{opacity: 0; transition: all 1s ease-in;} */
+/* 动画2. */
+/* .show{animation: show-Item 3s ease-in forwards;}
+.hide{animation: hide-Item 3s ease-in forwards;}
+@keyframes show-Item{
+    0%{
+        opacity: 0;
+        color: red;
+    }
+    50%{
+        opacity: .5;
+        color: green;
+    }
+    100%{
+        opacity: 1;
+        color: blue;
+    }
+}
+@keyframes hide-Item{
+    0%{
+        opacity: 1;
+        color: red;
+    }
+    50%{
+        opacity: .5;
+        color: green;
+    }
+    100%{
+        opacity: 0;
+        color: blue;
+    }
+} */
+
+/* 动画3. */
+.boss-text-enter {opacity: 0;}
+.boss-text-enter-active{opacity: 1; transition:  opacity 2000ms;}
+.boss-text-enter-dome{opacity: 1;}
+.boss-text-exit{opacity: 1;}
+.boss-text-exit-active{opacity: 0; transition:  opacity 2000ms;}
+.boss-text-exit-done{opacity: 0; }
